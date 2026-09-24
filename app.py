@@ -7,17 +7,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Get API key from environment
-gemini_api_key = os.getenv('GEMINI_API_KEY')
+claude_api_key = os.getenv('CLAUDE_API_KEY')
 
-if not gemini_api_key:
-    raise ValueError("GEMINI_API_KEY not found in environment variables. Please check your .env file.")
+if not claude_api_key:
+    raise ValueError("CLAUDE_API_KEY not found in environment variables. Please check your .env file.")
 
 # 1. Configuration
 config_list = [
     {
-        'model': 'gemini-2.0-flash-exp',
-        'api_key': gemini_api_key,
-        'api_type': 'google'
+        'model': 'claude-haiku-4-5',
+        'api_key': claude_api_key,
+        'api_type': 'anthropic'
     }
 ]
 
@@ -31,8 +31,8 @@ llm_config = {
 # 2. Initialize AgentBuilder with proper configuration
 builder = AgentBuilder(
     config_file_or_env=None,
-    builder_model='gemini-2.0-flash-exp',
-    agent_model='gemini-2.0-flash-exp'
+    builder_model='claude-haiku-4-5',
+    agent_model='claude-haiku-4-5'
 )
 
 # 3. Get task from user input
