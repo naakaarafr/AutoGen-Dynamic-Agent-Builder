@@ -1,7 +1,6 @@
 # AutoGen Dynamic Agent Builder
 
 ![AutoGen](https://img.shields.io/badge/AutoGen-Multi--Agent-blue)
-![Gemini](https://img.shields.io/badge/Gemini-2.0--Flash-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![License](https://img.shields.io/badge/License-MIT-red)
 
@@ -21,7 +20,7 @@ An intelligent multi-agent system that automatically designs and creates special
 ### Prerequisites
 
 - Python 3.8 or higher
-- Google Gemini API key
+- Claude API key
 - Git (for cloning the repository)
 
 ### Installation
@@ -40,7 +39,7 @@ pip install -r requirements.txt
 3. **Set up environment variables**
 Create a `.env` file in the root directory:
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
+Claude_API_KEY=your_Claude_api_key_here
 ```
 
 4. **Run the application**
@@ -71,16 +70,16 @@ AutoGen-Dynamic-Agent-Builder/
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `GEMINI_API_KEY` | Your Google Gemini API key | Yes |
+| `Claude_API_KEY` | Your Claude API key | Yes |
 
 ### LLM Configuration
 
-The system is configured to use Google's Gemini 2.0 Flash model:
+The system is configured to use claude-haiku-4-5 model:
 
 ```python
 config_list = [
     {
-        'model': 'gemini-2.0-flash-exp',
+        'model': 'claude-haiku-4-5',
         'api_key': your_api_key,
         'api_type': 'google'
     }
@@ -150,7 +149,7 @@ The system creates various types of agents:
 ### Step-by-Step Process
 
 1. **Task Input**: User provides a natural language description of their task
-2. **AI Analysis**: The system uses Gemini AI to analyze the task requirements
+2. **AI Analysis**: The system uses Claude AI to analyze the task requirements
 3. **Agent Design**: AI determines optimal agent roles, capabilities, and system messages
 4. **Agent Creation**: Specialized agents are instantiated with appropriate configurations
 5. **Group Formation**: Agents are organized into a collaborative group chat
@@ -195,7 +194,7 @@ To extend the system:
 
 | Issue | Solution |
 |-------|----------|
-| `GEMINI_API_KEY not found` | Check your `.env` file and API key |
+| `CLAUDE_API_KEY not found` | Check your `.env` file and API key |
 | `Agent building failed` | Verify internet connection and API accessibility |
 | `Code execution errors` | Ensure proper workspace permissions |
 | `JSON parsing errors` | Check if the AI response format is correct |
@@ -223,7 +222,7 @@ The system prints detailed logs of agent interactions.
 
 - **Clear Task Descriptions**: More detailed tasks lead to better agent design
 - **Reasonable Scope**: Break down very large tasks into smaller components
-- **API Limits**: Be aware of Gemini API rate limits and quotas
+- **API Limits**: Be aware of Claude API rate limits and quotas
 - **Resource Management**: Monitor system resources during code execution
 
 ## 🤝 Contributing
@@ -257,7 +256,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - **Microsoft AutoGen**: For the amazing multi-agent framework
-- **Google Gemini**: For the powerful AI capabilities
+- **Claude**: For the powerful AI capabilities
 - **Open Source Community**: For inspiration and contributions
 
 ## 📞 Support
